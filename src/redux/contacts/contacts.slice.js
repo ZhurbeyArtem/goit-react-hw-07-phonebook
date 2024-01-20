@@ -30,20 +30,21 @@ export const contactsSlice = createSlice({
     };
 
     builder
+      //get all contacts
       .addCase(fetchContacts.pending, setLoading)
       .addCase(fetchContacts.fulfilled, (state, { payload }) => {
         setLoaded(state);
         state.contacts = payload;
       })
       .addCase(fetchContacts.rejected, setError)
-
+      //add contact
       .addCase(fetchAddContacts.pending, setLoading)
       .addCase(fetchAddContacts.fulfilled, (state, { payload }) => {
         setLoaded(state);
         state.contacts = [...state.contacts, payload];
       })
       .addCase(fetchAddContacts.rejected, setError)
-
+      //remove contact
       .addCase(fetchRemoveContact.pending, setLoading)
       .addCase(fetchRemoveContact.fulfilled, (state, { payload }) => {
         setLoaded(state);
