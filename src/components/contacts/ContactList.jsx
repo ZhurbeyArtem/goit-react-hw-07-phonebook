@@ -7,9 +7,8 @@ import { getContacts } from '../../redux/contacts/getContacts';
 import { getFilter } from '../../redux/filter/getFilter';
 
 const ContactList = () => {
-  const contacts = useSelector(getContacts);
+  const { contacts } = useSelector(getContacts);
   const filter = useSelector(getFilter);
-
   const filteredContacts = () => {
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
@@ -20,7 +19,7 @@ const ContactList = () => {
     <ul className={s.list}>
       {filteredContacts().map(e => {
         return (
-          <ContactsItem key={e.id} id={e.id} name={e.name} phone={e.number} />
+          <ContactsItem key={e.id} id={e.id} name={e.name} phone={e.phone} />
         );
       })}
     </ul>
