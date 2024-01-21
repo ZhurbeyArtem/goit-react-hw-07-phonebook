@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import s from './style.module.css';
-import { getContacts } from '../../redux/contacts/getContacts';
 import { Notify } from 'notiflix';
-import { fetchAddContacts } from '../../redux/contacts/addContact';
+
+import { getContacts } from '../../redux/contacts/selectors';
+import { fetchAddContacts } from '../../redux/contacts/api';
+
+import s from './style.module.css';
 
 const ContactsForm = () => {
-  const { contacts } = useSelector(getContacts);
-
+  const  contacts  = useSelector(getContacts);
 
   const [formData, setFormData] = useState({
     name: '',

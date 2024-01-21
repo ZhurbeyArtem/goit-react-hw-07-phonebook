@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import s from './style.module.css';
-import { fetchRemoveContact } from '../../redux/contacts/removeContact';
+import { fetchRemoveContact } from '../../redux/contacts/api';
 
 const ContactsItem = ({ name, phone, id }) => {
   const dispatch = useDispatch();

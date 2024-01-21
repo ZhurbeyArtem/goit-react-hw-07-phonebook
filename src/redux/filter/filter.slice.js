@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { changeFilter } from "./changeFilter";
-import { getFilter } from "./getFilter";
-
+import { changeFilter, getFilter } from './selectors';
 
 let initialState = '';
 
